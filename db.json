@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Lekha",
+      "email": "lekha@example.com"
+    },
+    {
+      "id": "2",
+      "name": "Rahul",
+      "email": "rahul@example.com"
+    },
+    {
+      "id": "26ba",
+      "name": "Lekha",
+      "email": "ddd@gma.com"
+    },
+    {
+      "id": "7428",
+      "name": "ege",
+      "email": "efdfd@hjjhd.com"
+    },
+    {
+      "id": "6431",
+      "name": "ege",
+      "email": "123@hi.com"
+    },
+    {
+      "id": "ed8e",
+      "name": "NEW ",
+      "email": "NEW@gmail.com"
+    }
+  ]
+}
