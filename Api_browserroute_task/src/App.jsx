@@ -6,17 +6,12 @@ import HOME from "./HOME";
 function App() {
   return (
     <BrowserRouter>
-
-
-
       <Routes>
-         <Route path="/" element={<HOME/>} />
+        <Route path="/" element={<HOME />} />
         <Route path="/investors" element={<InvestorsList />} />
         <Route path="/investorform" element={<Investorform />} />
       </Routes>
     </BrowserRouter>
-
-    
   );
 }
 

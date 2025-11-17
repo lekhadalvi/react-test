@@ -1,0 +1,68 @@
+import React, { useState } from "react";
+import axios from "axios";
+
+const API_URL = "http://localhost:3001";
+
+const PatchUser = () => {
+  const [userId, setUserId] = useState("");
+  const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
+
+  const handlePatch = async () => {
+    if (!userId) return alert("Enter a valid User ID");
+
+    try {
+      const response = await axios.patch(`${API_URL}/users/${userId}`, {
+        ...(userName && { name: userName }),
+        ...(userEmail && { email: userEmail }),
+      });
+
+      alert("User updated successfully: " + JSON.stringify(response.data));
+
+      setUserId("");
+      setUserName("");
+      setUserEmail("");
+    } catch (error) {
+      alert("Error updating user: " + error.message);
+    }
+  };
+
+  return (
+    <div style={{ maxWidth: "400px", margin: "auto", paddingTop: "50px" }}>
+      <h2>Patch User</h2>
+
+      <input
+        type="number"
+        placeholder="Enter User ID"
+        value={userId}
+        onChange={(e) => setUserId(e.target.value)}
+        style={{ width: "100%", marginBottom: "10px" }}
+      />
+
+      <input
+        type="text"
+        placeholder="Name (optional)"
+        value={userName}
+        onChange={(e) => setUserName(e.target.value)}
+        style={{ width: "100%", marginBottom: "10px" }}
+      />
+
+      <input
+        type="email"
+        placeholder="Email (optional)"
+        value={userEmail}
+        onChange={(e) => setUserEmail(e.target.value)}
+        style={{ width: "100%", marginBottom: "20px" }}
+      />
+
+      <button
+        onClick={handlePatch}
+        style={{ backgroundColor: "#5153B8", color: "white", width: "100%" }}
+      >
+        PATCH
+      </button>
+    </div>
+  );
+};
+
+export default PatchUser;

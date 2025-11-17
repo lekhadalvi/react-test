@@ -1,18 +1,24 @@
 {
-    "investors": [
+  "investors": [
     {
-      "id": 1,
+      "id": "1",
       "name": "John Doe",
       "email": "john@example.com",
-      "phone": "1234567890",
-      "active": true
+      "phone": "1234567890"
+
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Jane Smith",
       "email": "jane@example.com",
-      "phone": "9876543210",
-      "active": false
+      "phone": "9876543210"
+     
+    },
+    {
+      "id": "a0b3",
+      "name": "Lekha Jitendra dalvi",
+      "email": "lekhadalvi08@gmail.com",
+      "phone": ""
     }
-]
+  ]
 }

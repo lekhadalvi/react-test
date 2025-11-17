@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import axios from 'axios';
+import axios from "axios";
 
 const InvestorsList = () => {
   const [investors, setInvestors] = useState([]);
   const [filter, setFilter] = useState("all");
   const API_URL = import.meta.env.VITE_INVESTORS_URL;
-const fetchInvestors = async () => {
+  const fetchInvestors = async () => {
     try {
       const response = await axios.get(API_URL);
       setInvestors(response.data);
@@ -13,24 +13,19 @@ const fetchInvestors = async () => {
       console.error("Error fetching investors:", error);
     }
   };
-  useEffect(() => {
-  }, []);
+  // useEffect(() => {}, []);
 
- const filteredInvestors =
-  filter === "all"
-    ? investors
-    : investors.filter((inv) => String(inv.active).toLowerCase() === filter);
+  const filteredInvestors =
+    filter === "all"
+      ? investors
+      : investors.filter((inv) => String(inv.active).toLowerCase() === filter);
 
-        console.log(filteredInvestors)
+  console.log(filteredInvestors);
 
   const downloadCSV = () => {
     const csvData = [
       ["Name", "Email", "Phone"],
-      ...filteredInvestors.map((i) => [
-        i.name,
-        i.email,
-        i.phone,
-      ]),
+      ...filteredInvestors.map((i) => [i.name, i.email, i.phone]),
     ]
       .map((row) => row.join(","))
       .join("\n");
@@ -66,24 +61,22 @@ const fetchInvestors = async () => {
             <th>Active</th>
           </tr>
         </thead>
-       <tbody>
-        {filteredInvestors.length > 0 ? (
-    filteredInvestors.map((inv) => (
-      <tr key={inv.id}>
-        <td>{inv.name}</td>
-        <td>{inv.email}</td>
-        <td>{inv.phone}</td>
-        <td>{inv.active ? "True" : "False"}</td>
-      </tr>
-    ))
-  ) : (
-    <tr>
-      <td >
-        No data available
-      </td>
-    </tr>
-  )}
-</tbody>
+        <tbody>
+          {filteredInvestors.length > 0 ? (
+            filteredInvestors.map((inv) => (
+              <tr key={inv.id}>
+                <td>{inv.name}</td>
+                <td>{inv.email}</td>
+                <td>{inv.phone}</td>
+                <td>{inv.active ? inv.active : "not found"}</td>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td>No data available</td>
+            </tr>
+          )}
+        </tbody>
       </table>
     </>
   );
