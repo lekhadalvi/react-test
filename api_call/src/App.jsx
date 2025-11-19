@@ -5,8 +5,8 @@ import './App.css'
 // import Both_method from './Both_method'
 // import Calling from './Calling'
 // import Post_api from './Post_api'
-// import  PatchUser from './PatchUsers'
-import PatchUsers from './PatchUsers'
+// import PatchUsers from './PatchUsers'
+import Useform from './Useform'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,7 +16,8 @@ function App() {
     {/* <Calling/>
     <Post_api/> */}
     {/* <Both_method/> */}
-  < PatchUsers/>
+  {/* < PatchUsers/> */}
+  <Useform/>
     </>
   )
 }
