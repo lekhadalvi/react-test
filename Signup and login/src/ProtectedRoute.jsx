@@ -1,9 +1,9 @@
 import { Navigate } from "react-router-dom";
 
 const ProtectedRoute = ({ children }) => {
-  const user = sessionStorage.getItem("sessionUser");
+  const sessionUser = sessionStorage.getItem("sessionUser");
 
-  if (!user) {
+  if (!sessionUser) {
     return <Navigate to="/login" replace />;
   }
 

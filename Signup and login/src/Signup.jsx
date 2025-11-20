@@ -1,74 +1,39 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const navigate = useNavigate();
-
-  const [user, setUser] = useState({
-    email: "",
-    password: "",
-  });
-
-  const [show, setShow] = useState(false);
-
-  const handleChange = (e) => {
-    setUser({ ...user, [e.target.name]: e.target.value });
-  };
-
-
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const handleSignup = (e) => {
     e.preventDefault();
-
     const users = JSON.parse(localStorage.getItem("users")) || [];
-
-    const userExists = users.find((u) => u.email === user.email);
-
+    const userExists = users.find((u) => u.email === email);
     if (userExists) {
-      alert("User already exists! Please login.");
+      alert("User already exists");
       navigate("/login");
-      return;
-    }
-
-    users.push(user);
+      return;}
+    users.push({ email, password });
     localStorage.setItem("users", JSON.stringify(users));
-
-    alert("Signup successful! Please login.");
-    navigate("/login");
-  };
-
+    alert("Signup successful");
+    navigate("/login");};
   return (
-    <>
-      <form onSubmit={handleSignup}>
-
-        <input
-          type="text"
-          name="email"
-          placeholder="Enter email"
-          onChange={handleChange}
-          required
-        />
-
-        <input
-          type={show ? "text" : "password"}
-          name="password"
-          placeholder="Enter password"
-          onChange={handleChange}
-          required
-        />
-
-        <button type="button" onClick={() => setShow(!show)}>
-          {show ? "Hide" : "Show"}
-        </button>
-
-        <button type="submit">Signup</button>
-
-      </form>
-
-      <p>
-        Already have an account?{" "}
-        <span onClick={() => navigate("/login")}>Login</span>
-      </p>
-    </>
+    <form onSubmit={handleSignup}>
+      <h2>Signup</h2>
+      <input
+        type="email"
+        placeholder="Enter Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        required/>
+      <input
+        type="password"
+        placeholder="Enter Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        required/>
+      <button type="submit">Signup</button>
+    </form>
   );
 };
 
