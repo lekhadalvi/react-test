@@ -1,26 +1,21 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import './App.css';
 
 const Signup = () => {
   const navigate = useNavigate();
-
   const [user, setUser] = useState({
     email: "",
     password: "",
   });
 
   const [show, setShow] = useState(false);
-
   const handleChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
-
-
   const handleSignup = (e) => {
     e.preventDefault();
-
     const users = JSON.parse(localStorage.getItem("users")) || [];
-
     const userExists = users.find((u) => u.email === user.email);
 
     if (userExists) {
@@ -28,10 +23,8 @@ const Signup = () => {
       navigate("/login");
       return;
     }
-
     users.push(user);
     localStorage.setItem("users", JSON.stringify(users));
-
     alert("Signup successful! Please login.");
     navigate("/login");
   };
