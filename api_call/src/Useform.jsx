@@ -9,7 +9,7 @@ const SignupForm = () => {
 
   const onSubmit = async (formData) => {
     try {
-      const response = await axios.post("http://localhost:3001/users", formData);
+      const response = await axios.post("http://localhost:5000/users", formData);
       toast.success("Added successfully!");
       reset();
     } catch (error) {
