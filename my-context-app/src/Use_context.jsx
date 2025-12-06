@@ -1,7 +1,7 @@
 import React, {  createContext, useState } from 'react'
 
 
-const context = createContext();
+const Context = createContext();
 
 const Use_context = ( {children}) => {
     const [user , setuser] =useState("guest");

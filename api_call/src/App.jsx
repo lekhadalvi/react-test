@@ -1,5 +1,6 @@
 import React from 'react'
 import './App.css'
+import Delete from './Delete'
 // import Both_method from './Both_method'
 // import Calling from './Calling'
 // import Post_api from './Post_api'

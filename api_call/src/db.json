@@ -2,6 +2,7 @@
   "users": [
     {
       "id": "1",
+<<<<<<< HEAD
       "name": "Quis officia nulla b",
       "email": "cahufoxoh@mailinator.com"
     },
@@ -9,45 +10,62 @@
       "id": "2",
       "name": "Eligendi vero volupt",
       "email": "fyvapy@mailinator.com"
+=======
+      "name": "Alice Johnson",
+      "email": "alice.johnson@example.com",
+      "password": "Pass1234"
     },
     {
-      "id": "26ba",
-      "name": "Lekha",
-      "email": "ddd@gma.com"
+      "id": "2",
+      "name": "Bob Smith",
+      "email": "bob.smith@example.com",
+      "password": "Password1"
+>>>>>>> f098ba9451756c30e63a8fce8ed2051e112f685f
     },
     {
-      "id": "7428",
-      "name": "ege",
-      "email": "efdfd@hjjhd.com"
+      "id": "3",
+      "name": "Charlie Davis",
+      "email": "charlie.davis@example.com",
+      "password": "Ch@rlie9"
     },
     {
-      "id": "6431",
-      "name": "ege",
-      "email": "123@hi.com"
+      "id": "4",
+      "name": "Diana Lee",
+      "email": "diana.lee@example.com",
+      "password": "D!ana456"
     },
     {
-      "id": "ed8e",
-      "name": "NEW ",
-      "email": "NEW@gmail.com"
+      "id": "6",
+      "name": "Fiona Brown",
+      "email": "fiona.brown@example.com",
+      "password": "F!0naB"
     },
     {
-      "id": "497e",
-      "name": "Shaine Talley",
-      "email": "niwocyp@mailinator.com"
+      "id": "7",
+      "name": "George Miller",
+      "email": "george.miller@example.com",
+      "password": "G3orgeM"
     },
     {
-      "id": "25bb",
-      "name": "Jena Curry",
-      "email": "fesoji@mailinator.com",
-      "password": "Pa$$w"
+      "id": "8",
+      "name": "Hannah Wilson",
+      "email": "hannah.wilson@example.com",
+      "password": "H@nnah1"
     },
     {
-      "id": "2462",
-      "name": "ege",
-      "email": "hghj@jgkh.com",
-      "password": "jhhgi"
+      "id": "9",
+      "name": "Ian Thompson",
+      "email": "ian.thompson@example.com",
+      "password": "IanT123"
     },
     {
+      "id": "10",
+      "name": "Julia Anderson",
+      "email": "julia.anderson@example.com",
+      "password": "Julia!88"
+    },
+    {
+<<<<<<< HEAD
       "id": "a1cf",
       "name": "Sybill Haley",
       "email": "tafobyx@mailinator.com",
@@ -99,6 +117,12 @@
       "name": "Aphrodite Lyons",
       "email": "hiwypularo@mailinator.com",
       "password": "Pa$$"
+=======
+      "id": "11",
+      "name": "Kevin Martinez",
+      "email": "kevin.martinez@example.com",
+      "password": "Kev!n456"
+>>>>>>> f098ba9451756c30e63a8fce8ed2051e112f685f
     }
   ]
 }
