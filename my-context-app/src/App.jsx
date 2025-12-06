@@ -1,13 +1,14 @@
-import { useState } from 'react'
-
+import { useContext } from 'react'
+import {contextMain} from './Context'
 import './App.css'
-import Use_context from './Use_context'
+
 
 function App() {
-  
+  const data = useContext (contextMain)
 
   return (
     <>
+    hello {data} 
     </>
   )
 }
