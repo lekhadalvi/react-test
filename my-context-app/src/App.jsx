@@ -1,15 +1,16 @@
-import { useContext } from 'react'
-import {contextMain} from './Context'
-import './App.css'
+import { useContext, useState } from 'react'
 
+import './App.css'
+import { ContextMain } from './Context'
 
 function App() {
-  const data = useContext (contextMain)
 
+const data = useContext(ContextMain)
   return (
-    <>
-    hello {data} 
-    </>
+    
+   <>
+    <h1>Hello World {data}</h1>
+   </>
   )
 }
 

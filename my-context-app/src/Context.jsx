@@ -1,16 +1,16 @@
-import React, { createContext, useState } from 'react';
+import { createContext, useState } from "react";
+import React from 'react'
 
 
-export const contextMain = createContext();
-
+export const ContextMain = createContext()
 const Context = ({ children }) => {
-  const [user, setUser] = useState("I am context hook");
+const [first, setfirst] = useState("I am from Context lekha")
+    return (                                                                                                                                                                                                                                                                                    
+       <ContextMain.Provider value={first}>
+            {children}
+        </ContextMain.Provider>
+    )
+}
 
-  return (
-    <contextMain.Provider value={{ user, setUser }}>
-      {children}
-    </contextMain.Provider>
-  );
-};
+export default Context
 
-export default Context;
