@@ -21,39 +21,35 @@ function Calling() {
   const getData = async () => {
     try {
       const response = await axios.get(
-        "https://jsonplaceholder.typicoe.com/users"
+        "https://jsonplaceholder.typicode.com/users"
       );
       setUsers(response.data);
-      notifySuccess(); 
+      notifySuccess();
     } catch (e) {
       console.error(e);
       notifyError(e.message);
-      return;
     }
   };
 
   return (
     <>
       <h2>Calling</h2>
-      <div>
-       
-        <button onClick={getData}>click</button>
-{
-  users.length > 0 ? (
-    users.map((item) => (
-      <React.Fragment key={item.id}>
-        <p>{item.name}</p>
-        <p>{item.email}</p>
-        <p>{item.id}</p>
-      </React.Fragment>
-    ))
-  ) : (
-    <p>not found</p>
-  )
-}
 
-        </div>
-        <ToastContainer />
+      <button onClick={getData}>click</button>
+
+      {users.length > 0 ? (
+        users.map((item) => (
+          <React.Fragment key={item.id}>
+            <p>{item.name}</p>
+            <p>{item.email}</p>
+            <p>{item.id}</p>
+          </React.Fragment>
+        ))
+      ) : (
+        <p>not found</p>
+      )}
+
+      <ToastContainer />
     </>
   );
 }

@@ -2,6 +2,15 @@
   "users": [
     {
       "id": "1",
+<<<<<<< HEAD
+      "name": "Quis officia nulla b",
+      "email": "cahufoxoh@mailinator.com"
+    },
+    {
+      "id": "2",
+      "name": "Eligendi vero volupt",
+      "email": "fyvapy@mailinator.com"
+=======
       "name": "Alice Johnson",
       "email": "alice.johnson@example.com",
       "password": "Pass1234"
@@ -11,6 +20,7 @@
       "name": "Bob Smith",
       "email": "bob.smith@example.com",
       "password": "Password1"
+>>>>>>> f098ba9451756c30e63a8fce8ed2051e112f685f
     },
     {
       "id": "3",
@@ -55,10 +65,64 @@
       "password": "Julia!88"
     },
     {
+<<<<<<< HEAD
+      "id": "a1cf",
+      "name": "Sybill Haley",
+      "email": "tafobyx@mailinator.com",
+      "password": "Pa$$h"
+    },
+    {
+      "id": "4fce",
+      "name": "Lekha Jitendra dalvi",
+      "email": "lekhadalvi08@gmail.com",
+      "password": "ghhhh"
+    },
+    {
+      "id": "ac0e",
+      "name": "Lekha Jitendra dalvi",
+      "email": "lekhadalvi08@gmail.com",
+      "password": "ghhhh"
+    },
+    {
+      "id": "adalvi08@gmail.com",
+      "name": "hgf",
+      "email": "lekh08@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "Sit minima dignissi",
+      "name": "Quin Cooper",
+      "email": "mufynisylu@mailinator.com",
+      "password": "Pa$$w0rd!"
+    },
+    {
+      "id": "e594",
+      "name": "Erich Church",
+      "email": "qosuwo@mailinator.com"
+    },
+    {
+      "id": "6865",
+      "name": "Elvis Warner",
+      "email": "xary@mailinator.com",
+      "password": "Pa$$w"
+    },
+    {
+      "id": "f8ce",
+      "name": "Jana Lee",
+      "email": "mevohejyr@mailinator.com",
+      "password": "Pa$$w"
+    },
+    {
+      "id": "de26",
+      "name": "Aphrodite Lyons",
+      "email": "hiwypularo@mailinator.com",
+      "password": "Pa$$"
+=======
       "id": "11",
       "name": "Kevin Martinez",
       "email": "kevin.martinez@example.com",
       "password": "Kev!n456"
+>>>>>>> f098ba9451756c30e63a8fce8ed2051e112f685f
     }
   ]
 }
