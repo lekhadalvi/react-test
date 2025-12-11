@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {HashRouter, BrowserRouter, Routes, Route } from "react-router-dom";
 import FormPage from "./Components/FormPage";
 import Dashboard from "./Components/Dashboard";
 import Thankyou from "./Components/Thankyou";

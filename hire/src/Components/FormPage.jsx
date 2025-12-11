@@ -127,7 +127,7 @@ className="gap-4 flex flex-col items-center justify-center mt-6"
   <div>
     <input
  {...register("additionalInfo")}
- placeholder="Additional Info (Optional)"
+ placeholder="Additional Info "
  className="w-full p-2 rounded-lg  bg-white"
     />
   </div>
