@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 const Dashboard = () => {
   const { records, removeRecord } = useContext(DataContext);
   const [editId, setEditId] = useState(null);
+console.log(editId+"this is editn");
 
   return (
     <div className="flex">
@@ -33,10 +34,10 @@ Dashboard
    <>
  
 <div className="gap-6">
-  <p  ><b className="bg-white gap-6 ">
+  <p  ><b className="bg-white gap-2 ">
   Name</b> {item.fullName}
   </p>
-<p><b className="bg-white gap-6">Phone
+<p><b className="bg-white">Phone
   </b> {item.phone}</p>
 <p><b className="bg-white">Email</b> {item.email}</p>
 <p><b className="bg-white">Role</b> {item.role}</p>

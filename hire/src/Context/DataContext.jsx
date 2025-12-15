@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from "react";
-import {  getData, postData, updateData, deleteData } from "../Api/Api";
+import { getData, postData, updateData, deleteData } from "../Api/Api";
 
 export const DataContext = createContext();
 
@@ -8,10 +8,10 @@ export const DataProvider = ({ children }) => {
 
   const fetchData = async () => {
     try {
- const res = await getData();
- setRecords(res || []);
+      const res = await getData();
+      setRecords(res || []);
     } catch (err) {
- console.error("Failed to fetch data:", err);
+      console.error("Failed to fetch data:", err);
     }
   };
 
@@ -20,35 +20,35 @@ export const DataProvider = ({ children }) => {
   }, []);
   const addRecord = async (data) => {
     try {
- await postData(data);
- fetchData(); 
+      await postData(data);
+      fetchData();
     } catch (err) {
- console.error("Failed to add record:", err);
+      console.error("Failed to add record:", err);
     }
   };
   const updateRecord = async (id, data) => {
     try {
- await updateData(id, data); 
- fetchData(); 
+      await updateData(id, data);
+      fetchData();
     } catch (err) {
- console.error("Failed to update record:", err);
+      console.error("Failed to update record:", err);
     }
   };
 
   const removeRecord = async (id) => {
     try {
- await deleteData(id);
- fetchData(); 
+      await deleteData(id);
+      fetchData();
     } catch (err) {
- console.error("Failed to delete record:", err);
+      console.error("Failed to delete record:", err);
     }
   };
 
   return (
     <DataContext.Provider
- value={{ records, fetchData, addRecord, updateRecord, removeRecord }}
+      value={{ records, fetchData, addRecord, updateRecord, removeRecord }}
     >
- {children}
+      {children}
     </DataContext.Provider>
   );
 };

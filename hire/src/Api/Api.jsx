@@ -10,16 +10,23 @@ export const getData = async () => {
 };
 export const postData = async (data) => {
   try {
+    console.log(data);
     const res = await api.post("/", data);
-    return res.data;
+    console.log(res);
+    return {
+      data: res.data,
+      message: "Success",
+    };
   } catch (err) {
-    console.error("POST error:", err);
+    return {
+      message: "Failure In Api Call",
+    };
   }
 };
 
 export const updateData = async (id, data) => {
   try {
-    const res = await api.put(`/${id}`, data); 
+    const res = await api.patch(`/${id}`, data);
     return res.data;
   } catch (err) {
     console.error("UPDATE error:", err);
