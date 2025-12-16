@@ -1,52 +1,49 @@
-import React, { createContext, useState } from "react";
-import { getdata, postdata, updatedata, deletedata } from "./API/Api";
+import { createContext, useState } from "react";
+import { getData, postData, updateData, deleteData } from "./API/Api";
 import { toast } from "react-toastify";
 
 export const Contextdata = createContext();
 
 const DataContext = ({ children }) => {
-  const [data, setdata] = useState([]);
+  const [data, setData] = useState([]);
 
   const fetchdata = async () => {
     try {
-      const res = await getdata();
-      setdata(res);
-    } catch (error) {
+      const res = await getData();
+      setData(res);
+    } catch {
       toast.error("Fetch failed");
     }
   };
 
-
   const adddata = async (formdata) => {
     try {
-      await postdata(formdata);
+      await postData(formdata);
       toast.success("Data submitted");
       fetchdata();
       return true;
-    } catch (error) {
+    } catch {
       toast.error("Submission failed");
       return false;
     }
   };
 
-
-  const updateData = async (id, updated) => {
+  const updateDataById = async (id, updated) => {
     try {
-      await updatedata(id, updated);
+      await updateData(id, updated);
       toast.success("Data updated");
       fetchdata();
-    } catch (error) {
+    } catch {
       toast.error("Update failed");
     }
   };
 
-
   const removeData = async (id) => {
     try {
-      await deletedata(id);
+      await deleteData(id);
       toast.success("Data deleted");
       fetchdata();
-    } catch (error) {
+    } catch {
       toast.error("Delete failed");
     }
   };
@@ -57,7 +54,7 @@ const DataContext = ({ children }) => {
         data,
         fetchdata,
         adddata,
-        updateData,
+        updateDataById,
         removeData,
       }}
     >

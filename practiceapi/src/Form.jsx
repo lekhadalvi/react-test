@@ -1,10 +1,17 @@
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
-import { Contextdata } from "../context/DataContext";
+import { Contextdata } from "./DataContext";
 import { useNavigate } from "react-router-dom";
 
 const Form = () => {
-  const { register, handleSubmit, reset } = useForm();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors},
+
+  } = useForm();
+
   const { adddata } = useContext(Contextdata);
   const navigate = useNavigate();
 
@@ -14,31 +21,52 @@ const Form = () => {
 
       if (success) {
         reset();
-        navigate("/Thank");
+        navigate("/thank");
       }
     } catch (error) {
       console.error(error);
-      reset();
     }
   };
 
   return (
-    <>
-      <form onSubmit={handleSubmit(handlechange)}>
+    <form onSubmit={handleSubmit(handlechange)} >
+    <div className="flex flex-col gap-4">
+         <div>
+         <input
+        {...register("fullname", {
+          required: "Full name is required",
+        })}
+        placeholder="Name"
+        type="text"
+      />
 
-    
-    <input
-    {...register ("fullname",{required:"fullname"})}
-    placeholder="name"
-    type="text"/>
-    {errors.fullname && (
-        <p>
-        {errors.fullname.message}
-        </p>)}
-    
-        <button type="submit">Submit</button>
-      </form>
-    </>
+      {errors.fullname && (
+        <p style={{ color: "red" }}>
+          {errors.fullname.message}
+        </p>
+      )}
+     </div>
+<div>
+    <input 
+{...register("email",{
+    required:"email required",
+
+})}
+placeholder="email"
+type="email"
+ 
+    />
+    {errors.email &&(
+    <p>
+        {errors.email.message}
+    </p>
+)}
+</div>
+      <button type="submit" >
+      submit
+      </button>        
+    </div>
+    </form>
   );
 };
 
