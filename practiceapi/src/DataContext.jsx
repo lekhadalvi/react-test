@@ -7,7 +7,6 @@ export const Contextdata = createContext();
 const DataContext = ({ children }) => {
   const [data, setdata] = useState([]);
 
-  
   const fetchdata = async () => {
     try {
       const res = await getdata();
@@ -30,7 +29,7 @@ const DataContext = ({ children }) => {
     }
   };
 
- 
+
   const updateData = async (id, updated) => {
     try {
       await updatedata(id, updated);
