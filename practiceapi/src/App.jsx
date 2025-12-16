@@ -1,8 +1,9 @@
 import { Routes, Route } from "react-router-dom";
+import Form from "./Form";
 import Dashboard from "./Dashboard";
 import EditPage from "./EditPage";
-import Form from "./Form";
-import Thank from "./Thank";
+
+const Thank = () => <h1 className="p-5">Thank You</h1>;
 
 const App = () => {
   return (
