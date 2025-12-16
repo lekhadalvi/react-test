@@ -30,7 +30,7 @@ const Form = () => {
 
   return (
     <form onSubmit={handleSubmit(handlechange)} >
-    <div className="flex flex-col gap-4">
+    <div className="flex">
          <div>
          <input
         {...register("fullname", {
