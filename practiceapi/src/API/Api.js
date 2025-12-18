@@ -1,6 +1,5 @@
 import api from "./URL";
 
-// GET
 export const getData = async () => {
   try {
     const res = await api.get("/");
@@ -11,7 +10,6 @@ export const getData = async () => {
   }
 };
 
-// POST
 export const postData = async (data) => {
   try {
     const res = await api.post("/", data);
@@ -22,10 +20,9 @@ export const postData = async (data) => {
   }
 };
 
-// UPDATE
 export const updateData = async (id, data) => {
   try {
-    const res = await api.patch(`/${id}`, data);
+    const res = await api.put(`/${id}`, data);
     return res.data;
   } catch (error) {
     console.error("UPDATE failed:", error);
@@ -33,7 +30,6 @@ export const updateData = async (id, data) => {
   }
 };
 
-// DELETE
 export const deleteData = async (id) => {
   try {
     const res = await api.delete(`/${id}`);

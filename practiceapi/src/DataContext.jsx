@@ -1,23 +1,42 @@
-import { useContext, useEffect } from "react";
-import { Contextdata } from "./DataContext";
+import React, { createContext, useEffect, useState } from "react";
+import { getData, postData, updateData, deleteData } from "./API/api";
 
-const Dashboard = () => {
-  const { data, fetchdata } = useContext(Contextdata);
+export const DataContext = createContext();
+
+const DataProvider = ({ children }) => {
+  const [records, setRecords] = useState([]);
+
+  const fetchData = async () => {
+    const data = await getData();
+    setRecords(data || []);
+  };
 
   useEffect(() => {
-    fetchdata();
+    fetchData();
   }, []);
 
+  const addRecord = async (data) => {
+    await postData(data);
+    fetchData();
+  };
+
+  const updateRecord = async (id, data) => {
+    await updateData(id, data);
+    fetchData();
+  };
+
+  const removeRecord = async (id) => {
+    await deleteData(id);
+    fetchData();
+  };
+
   return (
-    <div className="p-6">
-      {data.map((item) => (
-        <div key={item.id} className="border p-4 mb-2">
-          <p>{item.fullName}</p>
-          <p>{item.email}</p>
-        </div>
-      ))}
-    </div>
+    <DataContext.Provider
+      value={{ records, addRecord, updateRecord, removeRecord }}
+    >
+      {children}
+    </DataContext.Provider>
   );
 };
 
-export default Dashboard;
+export default DataProvider;

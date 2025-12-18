@@ -1,46 +1,33 @@
-import { useContext, useEffect } from "react";
-import { Contextdata } from "./DataContext";
+import { useContext } from "react";
+import { DataContext } from "./DataContext";
 import { Link } from "react-router-dom";
 
 const Dashboard = () => {
-  const { data, fetchdata, removeData } = useContext(Contextdata);
-
-  useEffect(() => {
-    fetchdata();
-  }, []);
+  const { records, removeRecord } = useContext(DataContext);
 
   return (
-    <div className="p-5">
-      <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
+    <div style={{ padding: 40 }}>
+      <h2>Dashboard</h2>
 
-      {data.length === 0 ? (
-        <p>No data found</p>
+      {records.length === 0 ? (
+        <p>No records found</p>
       ) : (
-        <table className="w-full border">
+        <table border="1" cellPadding="10">
           <thead>
-            <tr className="bg-gray-200">
-              <th className="border p-2">Name</th>
-              <th className="border p-2">Email</th>
-              <th className="border p-2">Actions</th>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
-            {data.map((item) => (
+            {records.map((item) => (
               <tr key={item.id}>
-                <td className="border p-2">{item.fullname}</td>
-                <td className="border p-2">{item.email}</td>
-                <td className="border p-2 flex gap-2">
-                  <Link
-                    to={`/edit/${item.id}`}
-                    className="text-blue-600 underline"
-                  >
-                    Edit
-                  </Link>
-
-                  <button
-                    onClick={() => removeData(item.id)}
-                    className="text-red-600"
-                  >
+                <td>{item.fullName}</td>
+                <td>{item.email}</td>
+                <td>
+                  <Link to={`/edit/${item.id}`}>Edit</Link>{" "}
+                  <button onClick={() => removeRecord(item.id)}>
                     Delete
                   </button>
                 </td>

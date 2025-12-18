@@ -1,53 +1,38 @@
-import { useForm } from "react-hook-form";
 import { useContext, useEffect } from "react";
-import { Contextdata } from "./DataContext";
+import { useForm } from "react-hook-form";
 import { useParams, useNavigate } from "react-router-dom";
+import { DataContext } from "./DataContext";
 
-const EditPage = () => {
+const Edit = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { records, updateRecord } = useContext(DataContext);
 
-  const { data, fetchdata, updateDataById } = useContext(Contextdata);
+  const { register, handleSubmit, reset } = useForm();
 
-  const {
-    register,
-    handleSubmit,
-    setValue,
-    formState: { errors },
-  } = useForm();
-
-  // ✅ FETCH DATA IF NOT PRESENT
   useEffect(() => {
-    if (data.length === 0) {
-      fetchdata();
-    }
-  }, []);
+    const record = records.find((r) => r.id === id);
+    if (record) reset(record);
+  }, [id, records, reset]);
 
-  // ✅ PREFILL AFTER DATA LOADS
-  useEffect(() => {
-    const record = data.find((item) => item.id === id);
-    if (record) {
-      setValue("fullname", record.fullname);
-      setValue("email", record.email);
-    }
-  }, [data, id, setValue]);
-
-  const onSubmit = async (formdata) => {
-    await updateDataById(id, formdata);
+  const onSubmit = async (data) => {
+    await updateRecord(id, data);
     navigate("/dashboard");
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
-      <input {...register("fullname", { required: "Name required" })} />
-      {errors.fullname && <p className="text-red-500">{errors.fullname.message}</p>}
+    <div style={{ padding: 40 }}>
+      <h2>Edit Record</h2>
 
-      <input {...register("email", { required: "Email required" })} />
-      {errors.email && <p className="text-red-500">{errors.email.message}</p>}
-
-      <button type="submit">Update</button>
-    </form>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <input {...register("fullName")} />
+        <br /><br />
+        <input {...register("email")} />
+        <br /><br />
+        <button type="submit">Update</button>
+      </form>
+    </div>
   );
 };
 
-export default EditPage;
+export default Edit;

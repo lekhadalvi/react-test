@@ -1,10 +1,8 @@
-import axios from "axios";
+import React from 'react'
+import axios from "axios"
 
 const api = axios.create({
-  baseURL: "https://69316d8911a8738467cec1b0.mockapi.io/lekha/api/test",
-  headers: {
-    "Content-Type": "application/json",
-  },
+  baseURL: "https://6939e63ec8d59937aa094e57.mockapi.io/hire",
+  headers: { "Content-Type": "application/json" },
 });
-
 export default api;
