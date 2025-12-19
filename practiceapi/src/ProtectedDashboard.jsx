@@ -19,7 +19,7 @@ const ProtectedDashboard = () => {
   const handleLogout = () => {
     localStorage.removeItem("isAuth");
     setIsAuth(false);
-    navigate("/"); // back to form
+    navigate("/"); 
   };
 
   if (!isAuth) {

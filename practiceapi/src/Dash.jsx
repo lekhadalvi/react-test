@@ -13,18 +13,13 @@ const Dash = ({ onLogout }) => {
   };
 
   return (
-    <div className="p-6 ">
+    <div className="p-6">
    
-      <div className="flex justify-between items-center mb-6">
-        <div className="text-xl font-semibold">Dashboard</div>
-        {/* <button
-          onClick={handleLogout}
-          className="px-4 py-2 bg-black text-white rounded-lg"
-        >
-          Sign Out
-        </button> */}
+      <div className="flex justify-between mb-6">
+        <div className="text-xl font-semibold">Submissions</div>
       </div>
 
+    
       {records.length === 0 ? (
         <p>No records found</p>
       ) : (
@@ -32,44 +27,65 @@ const Dash = ({ onLogout }) => {
           {records.map((item) => (
             <div
               key={item.id}
-              className="bg-white border rounded-xl p-5 shadow-sm hover:shadow-md transition"
+              className="bg-[#FEF2C3] border rounded-2xl p-6 shadow-sm"
             >
-              <div className="mb-3">
-                <div className="font-semibold text-lg">
-                  {item.fullName}
+              <div className="space-y-4">
+                <div className="flex gap-4">
+                  <span className="bg-white px-3 py-1 rounded-lg text-sm font-medium">
+                    Full Name
+                  </span>
+                  <span className="text-sm">{item.fullName}</span>
                 </div>
-                <div className="text-sm text-gray-500">
-                  {item.email}
-                </div>
-              </div>
 
-              <div className="space-y-1 text-sm">
-                <div>
-                  <span className="font-medium">Role:</span>{" "}
-                  {item.role}
+                <div className="flex gap-4">
+                  <span className="bg-white px-3 py-1 rounded-lg text-sm font-medium">
+                    Phone
+                  </span>
+                  <span className="text-sm">{item.phone}</span>
                 </div>
-                <div>
-                  <span className="font-medium">Phone:</span>{" "}
-                  {item.phone}
-                </div>
-                <div>
-                  <span className="font-medium">Budget:</span>{" "}
-                  {item.budget}
-                </div>
-                <div>
-                  <span className="font-medium">Hires:</span>{" "}
-                  {item.hires}
-                </div>
-                <div>
-                  <span className="font-medium">Persona:</span>{" "}
-                  {item.persona}
-                </div>
-              </div>
 
-              <div className="mt-3 text-sm text-gray-600">
-                <span className="font-medium">Additional Info:</span>
-                <div className="mt-1">
-                  {item.additionalInfo || "-"}
+                <div className="flex gap-4">
+                  <span className="bg-white px-3 py-1 rounded-lg text-sm font-medium">
+                    Email
+                  </span>
+                  <span className="text-sm">{item.email}</span>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <span className="bg-white px-3 py-1 rounded-lg text-sm font-medium">
+                    Additional info
+                  </span>
+                  <span className="text-sm leading-relaxed">
+                    {item.additionalInfo}
+                  </span>
+                </div>
+
+                <div className="flex gap-4">
+                  <span className="bg-white px-3 py-1 rounded-lg text-sm font-medium">
+                    Roles
+                  </span>
+                  <span className="text-sm">{item.role}</span>
+                </div>
+
+                <div className="flex gap-4">
+                  <span className="bg-white px-3 py-1 rounded-lg text-sm font-medium">
+                    Budget
+                  </span>
+                  <span className="text-sm">{item.budget}</span>
+                </div>
+
+                <div className="flex gap-4">
+                  <span className="bg-white px-3 py-1 rounded-lg text-sm font-medium">
+                    Talents
+                  </span>
+                  <span className="text-sm">{item.hires}</span>
+                </div>
+
+                <div className="flex gap-4">
+                  <span className="bg-white px-3 py-1 rounded-lg text-sm font-medium">
+                    Persona
+                  </span>
+                  <span className="text-sm">{item.persona}</span>
                 </div>
               </div>
             </div>

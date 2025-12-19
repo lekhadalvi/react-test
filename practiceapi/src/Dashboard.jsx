@@ -15,85 +15,103 @@ const Dashboard = ({ onLogout }) => {
   return (
     <div className="p-6">
   
-      <div className="flex justify-between items-center mb-6">
-        <div className="text-xl font-semibold">Dashboard</div>
-        {/* <button
-          onClick={handleLogout}
-          className="px-4 py-2 bg-black text-white rounded-lg"
-        >
-          Sign Out
-        </button> */}
+      <div className="flex justify-between mb-6">
+        <div className="text-xl font-semibold">Submissions</div>
+ 
       </div>
 
       {records.length === 0 ? (
         <p>No records found</p>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-4">
           {records.map((item) => (
-            <div
-              key={item.id}
-              className="bg-white border rounded-xl p-5 shadow-sm hover:shadow-md transition"
-            >
-              {/* Header */}
-              <div className="mb-3">
-                <div className="font-semibold text-lg">
-                  {item.fullName}
-                </div>
-                <div className="text-sm text-gray-500">
-                  {item.email}
-                </div>
-              </div>
+  <div
+    // key={item.id}
+    className="bg-[#FEF2C3] border rounded-2xl p-6 shadow-sm"
+  >
+    <div className="">
+   
+ <div className="flex  flex-col gap-2 py-4 px-2">
+       <div className="flex gap-4">
+        <span className="bg-white px-3 py-1 rounded-lg text-sm font-medium">
+          Full Name
+        </span>
+        <span className="text-sm font-medium">{item.fullName}</span>
+      </div>
 
-              {/* Details */}
-              <div className="space-y-1 text-sm">
-                <div>
-                  <span className="font-medium">Role:</span>{" "}
-                  {item.role}
-                </div>
-                <div>
-                  <span className="font-medium">Phone:</span>{" "}
-                  {item.phone}
-                </div>
-                <div>
-                  <span className="font-medium">Budget:</span>{" "}
-                  {item.budget}
-                </div>
-                <div>
-                  <span className="font-medium">Hires:</span>{" "}
-                  {item.hires}
-                </div>
-                <div>
-                  <span className="font-medium">Persona:</span>{" "}
-                  {item.persona}
-                </div>
-              </div>
+      <div className="">
+        <span className="bg-white px-3 py-1 rounded-lg text-sm font-medium">
+          Email
+        </span>
+        <span className="text-sm">{item.email}</span>
+      </div>
 
-              {/* Additional Info */}
-              <div className="mt-3 text-sm text-gray-600">
-                <span className="font-medium">Additional Info:</span>
-                <div className="mt-1">
-                  {item.additionalInfo || "-"}
-                </div>
-              </div>
+      <div className="flex gap-4">
+        <span className="bg-white px-3 py-1 rounded-lg text-sm font-medium">
+          Phone
+        </span>
+        <span className="text-sm">{item.phone}</span>
+      </div>
 
-              {/* Actions */}
-              <div className="mt-4 flex justify-between items-center">
-                <Link
-                  to={`/edit/${item.id}`}
-                  className="text-blue-600 text-sm"
-                >
-                  Edit
-                </Link>
+    
+      <div className="flex gap-4">
+        <span className="bg-white px-3 py-1 rounded-lg text-sm font-medium">
+          Role
+        </span>
+        <span className="text-sm">{item.role}</span>
+      </div>
 
-                <button
-                  onClick={() => removeRecord(item.id)}
-                  className="text-red-600 text-sm"
-                >
-                  Delete
-                </button>
-              </div>
-            </div>
-          ))}
+      
+      <div className="flex gap-4">
+        <span className="bg-white px-3 py-1 rounded-lg text-sm font-medium">
+          Budget
+        </span>
+        <span className="text-sm">{item.budget}</span>
+      </div>
+
+      <div className="flex gap-4">
+        <span className="bg-white px-3 py-1 rounded-lg text-sm font-medium">
+          Hires
+        </span>
+        <span className="text-sm">{item.hires}</span>
+      </div>
+
+      <div className="flex gap-4">
+        <span className="bg-white px-3 py-1 rounded-lg text-sm font-medium">
+          Persona
+        </span>
+        <span className="text-sm">{item.persona}</span>
+      </div>
+
+      <div className="flex items-start gap-4">
+        <span className="bg-white px-3 py-1 rounded-lg text-sm font-medium">
+          Additional Info
+        </span>
+        <span className="text-sm leading-relaxed">
+          {item.additionalInfo }
+        </span>
+      </div>
+ </div>
+
+      <div className="pt-4 flex justify-between ">
+        <Link
+          to={`/edit/${item.id}`}
+          className=" text-sm border px-4 py-2 rounded font-medium bg-black text-white"
+        >
+          Edit
+        </Link>
+
+        <button
+          onClick={() => removeRecord(item.id)}
+          className=" text-sm px-4 py-2 rounded font-medium bg-black text-white"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+))}
+
         </div>
       )}
     </div>
