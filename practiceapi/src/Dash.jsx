@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { DataContext } from "./DataContext";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const Dashboard = ({ onLogout }) => {
-  const { records, removeRecord } = useContext(DataContext);
+const Dash = ({ onLogout }) => {
+  const { records } = useContext(DataContext);
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -13,8 +13,8 @@ const Dashboard = ({ onLogout }) => {
   };
 
   return (
-    <div className="p-6">
-  
+    <div className="p-6 ">
+   
       <div className="flex justify-between items-center mb-6">
         <div className="text-xl font-semibold">Dashboard</div>
         {/* <button
@@ -34,7 +34,6 @@ const Dashboard = ({ onLogout }) => {
               key={item.id}
               className="bg-white border rounded-xl p-5 shadow-sm hover:shadow-md transition"
             >
-              {/* Header */}
               <div className="mb-3">
                 <div className="font-semibold text-lg">
                   {item.fullName}
@@ -44,7 +43,6 @@ const Dashboard = ({ onLogout }) => {
                 </div>
               </div>
 
-              {/* Details */}
               <div className="space-y-1 text-sm">
                 <div>
                   <span className="font-medium">Role:</span>{" "}
@@ -68,29 +66,11 @@ const Dashboard = ({ onLogout }) => {
                 </div>
               </div>
 
-              {/* Additional Info */}
               <div className="mt-3 text-sm text-gray-600">
                 <span className="font-medium">Additional Info:</span>
                 <div className="mt-1">
                   {item.additionalInfo || "-"}
                 </div>
-              </div>
-
-              {/* Actions */}
-              <div className="mt-4 flex justify-between items-center">
-                <Link
-                  to={`/edit/${item.id}`}
-                  className="text-blue-600 text-sm"
-                >
-                  Edit
-                </Link>
-
-                <button
-                  onClick={() => removeRecord(item.id)}
-                  className="text-red-600 text-sm"
-                >
-                  Delete
-                </button>
               </div>
             </div>
           ))}
@@ -100,4 +80,4 @@ const Dashboard = ({ onLogout }) => {
   );
 };
 
-export default Dashboard;
+export default Dash;
