@@ -15,13 +15,18 @@ const Form = () => {
   const navigate = useNavigate();
 
   const onSubmit = async (data) => {
-    await addRecord(data);
+    try {
+          await addRecord(data);
     reset();
     navigate("/thank");
+    } catch (error) {
+      console.error(error);
+      
+    }
   };
 
   return (
-    <div className=" bg-[#FFDA30] flex items-center justify-center">
+    <div className=" bg-[#FFDA30] min-h-screen  flex items-center justify-center">
       <div className=" p-8 ">
    
         <div className="text-center mb-6">

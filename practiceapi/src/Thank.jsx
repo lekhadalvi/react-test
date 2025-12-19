@@ -1,14 +1,14 @@
 import React from 'react'
-import img from "./assets/6963.jpg";
+import img from "./assets/thanks.jpg";
 
 const Thank = () => {
   return (
-    <div className=" flex flex-col items-center justify-center text-center p-10">
+    <div className=" flex flex-col items-center justify-center text-center p-10 ">
       
       <img
         src={img}
         alt="Thank you"
-        className=" mb-6"
+        className=" mb-6 w-[50%] "
       />
 
       <div className="text-lg font-medium text-gray-800">

@@ -19,30 +19,30 @@ const DashboardSelector = ({ onLogout }) => {
         </button>
       </div>
 
-      <div className="flex gap-8">
+      <div className="flex gap-8 ">
      
-        <div className="w-[25%] flex flex-col gap-4 bg-[#FFFCF0] min-h-scree">
+        <div className="w-[25%] flex flex-col gap-4 bg-[#FFFCF0] min-h-screen ">
 
 
           <button
             onClick={() => setSelected("dash")}
-            className={`px-6 py-3 rounded-xl border text-left ${
+            className={`px-6 py-3 rounded-xl border text-center ${
               selected === "dash"
-                ? "bg-[#FFEC9B] text-black"
-                : "bg-white"
+                ? "bg-[#FFEC9B] text-black font-bold"
+                : "bg-white font-medium"
             }`}
           >
             Dashboard
           </button>
                     <button
             onClick={() => setSelected("dashboard")}
-            className={`px-6 py-3 rounded-xl border text-left ${
+            className={`px-6 py-3 rounded-xl border text-center ${
               selected === "dashboard"
-                ? "bg-[#FFEC9B] text-black"
-                : "bg-white"
+                ? "bg-[#FFEC9B] text-black font-bold"
+                : "bg-white font-medium"
             }`}
           >
-            Dashboard
+            Dashboard Edit
           </button>
               
         </div>
