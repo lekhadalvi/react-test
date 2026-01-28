@@ -4,7 +4,7 @@ import Dashboard from "./Components/Dashboard";
 import Thankyou from "./Components/Thankyou";
 import { DataProvider } from "./Context/DataContext";
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+// import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
