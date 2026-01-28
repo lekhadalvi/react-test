@@ -1,0 +1,8 @@
+src/
+ ├─ api/
+ │   └─ hireApi.js
+ ├─ components/
+ │   ├─ HireList.jsx
+ │   └─ AddHire.jsx
+ ├─ App.jsx
+ └─ main.jsx
