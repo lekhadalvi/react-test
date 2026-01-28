@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 const Dashboard = () => {
   const { records, removeRecord } = useContext(DataContext);
   const [editId, setEditId] = useState(null);
+console.log(editId+"this is editn");
 
   return (
     <div className="flex">
@@ -16,7 +17,7 @@ Dashboard
    </Link>
  </div>
 
- <div className="ml-60 p-10 w-full">
+ <div className="ml-60 p-10 h-[50%]">
    <h1 className="text-3xl font-bold mb-5">All Submissions</h1>
 
    {records.length === 0 ? (
@@ -32,19 +33,20 @@ Dashboard
  ) : (
    <>
  
-<p ><b className="bg-white ">
-  Name:</b> {item.fullName}
+<div className="gap-6">
+  <p  ><b className="bg-white gap-2 ">
+  Name</b> {item.fullName}
   </p>
-<p><b className="bg-white">Phone:
+<p><b className="bg-white">Phone
   </b> {item.phone}</p>
-<p><b className="bg-white">Email:</b> {item.email}</p>
-<p><b className="bg-white">Role:</b> {item.role}</p>
-<p><b className="bg-white">Budget:</b>
+<p><b className="bg-white">Email</b> {item.email}</p>
+<p><b className="bg-white">Role</b> {item.role}</p>
+<p><b className="bg-white">Budget</b>
 {item.budget}</p>
-<p><b className="bg-white">Talents:</b>
+<p><b className="bg-white">Talents</b>
  {item.talents}</p>
-<p><b className="bg-white">Persona:</b> {item.persona}</p>
-
+<p><b className="bg-white">Persona</b> {item.persona}</p>
+<p><b className="bg-white">INFO</b> {item.additionalInfo}</p>
 <div className="flex gap-2 mt-4">
   <button
     onClick={() => setEditId(item.id)}
@@ -55,10 +57,11 @@ Dashboard
 
   <button
     onClick={() => removeRecord(item.id)}
-    className="bg-red-600 text-white px-3 py-2 rounded w-full"
+    className="bg-black text-white px-3 py-2 rounded w-full"
   >
     Delete
   </button>
+</div>
 </div>
    </>
  )}

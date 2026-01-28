@@ -1,10 +1,9 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {HashRouter, BrowserRouter, Routes, Route } from "react-router-dom";
 import FormPage from "./Components/FormPage";
 import Dashboard from "./Components/Dashboard";
 import Thankyou from "./Components/Thankyou";
 import { DataProvider } from "./Context/DataContext";
 import { ToastContainer } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
